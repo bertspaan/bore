@@ -7,8 +7,10 @@ RUN cargo install --path .
 FROM scratch
 COPY --from=builder /usr/local/cargo/bin/bore .
 
-ARG PORT
-EXPOSE 7000-8000
+# ARG PORT
+EXPOSE 80
+EXPOSE 7835
+# EXPOSE 7000-8000
 
 USER 1000:1000
 ENTRYPOINT ["./bore"]
